@@ -28,6 +28,21 @@ A queue is a linear data structure that follows the FIFO (First In, First Out) p
 - **Peek:** Retrieve the element at the front of the queue without removing it.
 - **isEmpty:** Check if the queue is empty.
 
+## Linked Lists
+
+### Singly Linked List
+A singly linked list is a linear data structure in which each element, or node, points to the next element in the sequence. Each node contains two parts: the data and a reference (or link) to the next node in the sequence.
+
+#### Operations on Singly Linked List
+- **Append to Tail:** Add a new node to the end of the list.
+- **Delete Node:** Remove a node from the list by value.
+- **Print:** Display all nodes in the list.
+- **Get Size:** Return the number of nodes in the list.
+- **Get by Position:** Retrieve the value of the node at a specific position from the end of the list.
+
+#### Singly Linked List Class
+The `ListaEnlazada` class implements the singly linked list with basic operations.
+
 ## Node and NodeGeneric Classes
 
 ### Node
@@ -120,6 +135,36 @@ This version includes the addition of two exercises related to linear data struc
     ```
 
 This version also includes an update to the `App` class to demonstrate how to use these new exercises.
+
+
+### Versión 2.0.3
+
+
+### Version 2.0.3
+
+To create this version, use the following Git commands:
+
+```sh
+git add .
+git commit -m "Linear Structures – LinkedList Exercises"
+git tag -a v2.0.3 -m "Linear Structures – LinkedList Exercises"
+git push origin --tags
+```
+
+#### Description
+
+This version includes the addition of the LinkedList implementation and a new exercise:
+
+- **LinkedList:** Implementation of a singly linked list using the `Node` class.
+- **Exercise 03: Get Node by Position**
+  - Implementation of a method to return the N-th node from the end of a singly linked list.
+  - Example usage:
+    ```java
+    LinkedListEjr example = new LinkedListEjr();
+    int result = example.getByPos(1); // Should return 7 for the list 1->2->5->7->6
+    ```
+    
+This version also includes an update to the `App` class to demonstrate how to use the new LinkedList and the exercise.
 
 
 ## Contribute

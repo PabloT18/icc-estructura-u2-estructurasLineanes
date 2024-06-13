@@ -4,11 +4,13 @@ import Materia.Models.Node;
 
 public class ListaEnlazada {
     public Node head;
-    private int size;
+    private int size = 0;
 
     public void appendToTail(int value) {
         if (head == null) {
             head = new Node(value);
+            size++;
+
             return;
         }
 

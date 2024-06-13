@@ -1,6 +1,7 @@
 
 import Ejercicio_01_sign.SignValidator;
 import Ejercicio_02_sorting.StackSorter;
+import Ejercicio_03_linkedLists.LinkedListEjr;
 import Materia.Cola.Queue;
 import Materia.Cola.QueueGeneric;
 import Materia.Pilas.Pila;
@@ -17,6 +18,7 @@ public class App {
                 // runEjercicio1();
 
                 runEjercicio2();
+                runEjercicio3();
         }
 
         private static void runPila() {
@@ -122,6 +124,16 @@ public class App {
                 // Imprimir la pila después de ordenar
                 System.out.println("Pila después de ordenar:");
                 stackSorted.printAllNodes();
+        }
+
+        private static void runEjercicio3() {
+                LinkedListEjr example = new LinkedListEjr();
+                System.out.println("Nodo en la posición 1 desde el final: " + example.getByPos(1)); // Debería imprimir
+                                                                                                    // 7
+                System.out.println("Nodo en la posición 2 desde el final: " + example.getByPos(2)); // Debería imprimir
+                                                                                                    // 6
+                System.out.println("Nodo en la posición 4 desde el final: " + example.getByPos(5)); // Debería imprimir
+                                                                                                    // 1
         }
 
 }
