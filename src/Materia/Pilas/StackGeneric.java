@@ -1,6 +1,8 @@
-package Materia;
+package Materia.Pilas;
 
 import java.util.EmptyStackException;
+
+import Materia.Models.NodeGeneric;
 
 public class StackGeneric<T> {
     private NodeGeneric<T> top;
