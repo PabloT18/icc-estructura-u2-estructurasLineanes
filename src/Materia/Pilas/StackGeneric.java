@@ -49,4 +49,15 @@ public class StackGeneric<T> {
     public int size() {
         return size;
     }
+
+    // Método para imprimir todos los nodos
+    public void printAllNodes() {
+        NodeGeneric<T> current = top;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+        System.out.println("END");
+    }
+
 }

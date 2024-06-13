@@ -83,6 +83,43 @@ This version includes the implementation of basic linear data structures:
 Additionally, this version includes examples in the `App` class demonstrating how to use these data structures.
 
 
+### Version 2.0.2
+
+To create this version, use the following Git commands:
+
+```sh
+git add .
+git commit -m "Estructuras Lineales – Ejercicios"
+git tag -a v2.0.2 -m "Estructuras Lineales – Ejercicios"
+git push origin --tags
+```
+
+#### Description
+
+This version includes the addition of two exercises related to linear data structures:
+- **Exercise 01: Parentheses Validation**
+  - Implementation of an algorithm to determine if a string containing only the characters '(', ')', '{', '}', '[' and ']' is valid.
+  - Example usage:
+    ```java
+    SignValidator validParenthesis = new SignValidator();
+    boolean result = validParenthesis.isValid("([]){}"); // True
+    ```
+
+- **Exercise 02: Stack Sorting**
+  - Implementation of an algorithm to sort a stack of integers such that the smallest elements are at the top of the stack.
+  - Example usage:
+    ```java
+    StackSorter stackSorter = new StackSorter();
+    StackGeneric<Integer> stack = new StackGeneric<>();
+    stack.push(7);
+    stack.push(2);
+    stack.push(5);
+    stack.push(1);
+    StackGeneric<Integer> stackSorted = stackSorter.sortStack(stack);
+    stackSorted.printAllNodes(); // Output: 1 -> 2 -> 5 -> 7 -> END
+    ```
+
+This version also includes an update to the `App` class to demonstrate how to use these new exercises.
 
 
 ## Contribute
