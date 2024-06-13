@@ -1,4 +1,6 @@
-package Materia;
+package Materia.ListasEnlazadas;
+
+import Materia.Models.Node;
 
 public class ListaEnlazada {
     public Node head;

@@ -1,6 +1,8 @@
-package Materia;
+package Materia.Pilas;
 
 import java.util.EmptyStackException;
+
+import Materia.Models.Node;
 
 public class Pila {
     private Node top;

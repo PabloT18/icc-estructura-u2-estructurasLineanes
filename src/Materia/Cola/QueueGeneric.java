@@ -1,4 +1,6 @@
-package Materia;
+package Materia.Cola;
+
+import Materia.Models.NodeGeneric;
 
 ;
 
