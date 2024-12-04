@@ -1,6 +1,6 @@
 package Ejercicio_01_sign;
 
-import Materia.Pilas.StackGeneric;
+import Materia.Staks.StackGeneric;
 
 /**
  * Clase SignValidator

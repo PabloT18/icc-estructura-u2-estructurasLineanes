@@ -1,6 +1,6 @@
 package Ejercicio_02_sorting;
 
-import Materia.Pilas.StackGeneric;
+import Materia.Staks.StackGeneric;
 
 /**
  * Clase StackSorter
