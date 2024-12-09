@@ -1,4 +1,4 @@
-package Materia.Cola;
+package Materia.Queues;
 
 import java.util.NoSuchElementException;
 
@@ -77,7 +77,7 @@ public class Queue {
             front = newNode;
             rear = newNode;
         } else {
-            rear.next = newNode;
+            rear.setNext(newNode);
             rear = newNode;
         }
         size++;
@@ -108,8 +108,8 @@ public class Queue {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola está vacía.");
         }
-        int value = front.value;
-        front = front.next;
+        int value = front.getValue();
+        front = front.getNext();
         if (front == null) {
             rear = null;
         }
@@ -132,7 +132,7 @@ public class Queue {
         if (isEmpty()) {
             throw new NoSuchElementException("La cola está vacía.");
         }
-        return front.value;
+        return front.getValue();
     }
 
     /**

@@ -1,4 +1,4 @@
-package Materia.Cola;
+package Materia.Queues;
 
 import java.util.NoSuchElementException;
 

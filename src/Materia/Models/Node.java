@@ -5,8 +5,8 @@ package Materia.Models;
  * Representa un nodo en la lista enlazada utilizada por la cola.
  */
 public class Node {
-    public int value; // Valor del nodo
-    public Node next; // Referencia al siguiente nodo
+    private int value; // Valor del nodo
+    private Node next; // Referencia al siguiente nodo
 
     /**
      * Constructor del nodo.
@@ -21,5 +21,17 @@ public class Node {
     @Override
     public String toString() {
         return "Node [value=" + value + "]";
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public Node getNext() {
+        return next;
+    }
+
+    public void setNext(Node next) {
+        this.next = next;
     }
 }

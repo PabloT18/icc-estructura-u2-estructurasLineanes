@@ -2,9 +2,9 @@
 import Ejercicio_01_sign.SignValidator;
 import Ejercicio_02_sorting.StackSorter;
 import Ejercicio_03_linkedLists.LinkedListEjr;
-import Materia.Cola.Queue;
-import Materia.Cola.QueueGeneric;
 import Materia.ListasEnlazadas.ListaEnlazadaGenerica;
+import Materia.Queues.Queue;
+import Materia.Queues.QueueGeneric;
 import Materia.Staks.Stack;
 import Materia.Staks.StackGeneric;
 import Models.Pantalla;

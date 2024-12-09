@@ -1,13 +1,14 @@
-package Materia.Staks;
+package Materia.Stacks;
 
 import java.util.EmptyStackException;
 
-import Materia.Models.Node;
+import Materia.Models.NodeGeneric;
 
 /**
- * Clase Stack:
- * Implementa una estructura de datos de pila (LIFO, "Last In, First Out")
- * utilizando una lista enlazada.
+ * Clase StackGeneric:
+ * Implementa una estructura de datos de pila genérica (LIFO, "Last In, First
+ * Out")
+ * utilizando una lista enlazada genérica.
  * Las operaciones principales (`push`, `pop`, `peek`, `isEmpty`, `size`)
  * tienen una complejidad de O(1) debido al uso de referencias directas a la
  * cima de la pila.
@@ -26,19 +27,19 @@ import Materia.Models.Node;
  * - `top`: Referencia al elemento en la cima de la pila.
  * - `size`: Contador del número de elementos en la pila.
  *
- * @author
- *         Pablo Torres ptorres@ups.edu.ec
+ * @param <T> El tipo de elementos que esta pila puede contener.
+ * @autor Pablo Torres ptorres@ups.edu.ec
  */
-public class Stack {
+public class StackGeneric<T> {
 
-    private Node top; // Nodo en la cima de la pila
+    private NodeGeneric<T> top; // Nodo en la cima de la pila
     private int size; // Número de elementos en la pila
 
     /**
-     * Constructor de la clase Stack.
+     * Constructor de la clase StackGeneric.
      * Inicializa una pila vacía con la cima como null y tamaño 0.
      */
-    public Stack() {
+    public StackGeneric() {
         this.top = null;
         this.size = 0;
     }
@@ -47,22 +48,22 @@ public class Stack {
      * Método push:
      * Añade un nuevo elemento a la cima de la pila.
      *
-     * @param value El valor del elemento que se desea añadir.
+     * @param data El dato del elemento que se desea añadir.
      *
-     *              <p>
-     *              <b>Complejidad:</b> O(1).
-     *              </p>
-     *              <ul>
-     *              <li>Crea un nuevo nodo con el valor proporcionado.</li>
-     *              <li>Enlaza el nuevo nodo al nodo actualmente en la cima.</li>
-     *              <li>Actualiza la referencia `top` para que apunte al nuevo
-     *              nodo.</li>
-     *              <li>Incrementa el contador `size`.</li>
-     *              </ul>
+     *             <p>
+     *             <b>Complejidad:</b> O(1).
+     *             </p>
+     *             <ul>
+     *             <li>Crea un nuevo nodo con el dato proporcionado.</li>
+     *             <li>Enlaza el nuevo nodo al nodo actualmente en la cima.</li>
+     *             <li>Actualiza la referencia `top` para que apunte al nuevo
+     *             nodo.</li>
+     *             <li>Incrementa el contador `size`.</li>
+     *             </ul>
      */
-    public void push(int value) {
-        Node newNode = new Node(value);
-        newNode.next = top;
+    public void push(T data) {
+        NodeGeneric<T> newNode = new NodeGeneric<>(data);
+        newNode.setNext(top);
         top = newNode;
         size++;
     }
@@ -71,7 +72,7 @@ public class Stack {
      * Método pop:
      * Retira y retorna el elemento en la cima de la pila.
      *
-     * @return El valor del elemento retirado.
+     * @return El dato del elemento retirado.
      * @throws EmptyStackException Si la pila está vacía.
      *
      *                             <p>
@@ -80,27 +81,27 @@ public class Stack {
      *                             <ul>
      *                             <li>Verifica si la pila está vacía; si es así,
      *                             lanza una excepción.</li>
-     *                             <li>Recupera el valor del nodo en la cima.</li>
+     *                             <li>Recupera el dato del nodo en la cima.</li>
      *                             <li>Actualiza la referencia `top` al siguiente
      *                             nodo.</li>
      *                             <li>Decrementa el contador `size`.</li>
      *                             </ul>
      */
-    public int pop() {
+    public T pop() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        int value = top.value;
-        top = top.next;
+        T data = top.getData();
+        top = top.getNext();
         size--;
-        return value;
+        return data;
     }
 
     /**
      * Método peek:
-     * Retorna el valor del elemento en la cima de la pila sin retirarlo.
+     * Retorna el dato del elemento en la cima de la pila sin retirarlo.
      *
-     * @return El valor del elemento en la cima de la pila.
+     * @return El dato del elemento en la cima de la pila.
      * @throws EmptyStackException Si la pila está vacía.
      *
      *                             <p>
@@ -109,15 +110,15 @@ public class Stack {
      *                             <ul>
      *                             <li>Verifica si la pila está vacía; si es así,
      *                             lanza una excepción.</li>
-     *                             <li>Retorna el valor almacenado en el nodo en la
+     *                             <li>Retorna el dato almacenado en el nodo en la
      *                             cima.</li>
      *                             </ul>
      */
-    public int peek() {
+    public T peek() {
         if (isEmpty()) {
             throw new EmptyStackException();
         }
-        return top.value;
+        return top.getData();
     }
 
     /**
@@ -126,6 +127,7 @@ public class Stack {
      *
      * @return <code>true</code> si la pila no contiene elementos, de lo contrario
      *         <code>false</code>.
+     * 
      */
     public boolean isEmpty() {
         return top == null;
@@ -136,15 +138,23 @@ public class Stack {
      * Retorna el número de elementos en la pila.
      *
      * @return El tamaño actual de la pila.
-     *
-     *         <p>
-     *         <b>Complejidad:</b> O(1).
-     *         </p>
-     *         <ul>
-     *         <li>Retorna el valor del contador `size`.</li>
-     *         </ul>
+     * 
      */
     public int size() {
         return size;
+    }
+
+    /**
+     * Método printAllNodes:
+     * Imprime todos los elementos de la pila en orden desde la cima hasta el final.
+     */
+    public void printAllNodes() {
+        NodeGeneric<T> current = top;
+        System.out.print("Cima -> ");
+        while (current != null) {
+            System.out.print(current.getData() + " -> ");
+            current = current.getNext();
+        }
+        System.out.println("FIN");
     }
 }
