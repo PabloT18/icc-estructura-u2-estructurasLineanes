@@ -66,10 +66,10 @@ public class ListaEnlazada {
         }
 
         Node current = head;
-        while (current.next != null) {
-            current = current.next;
+        while (current.getNext() != null) {
+            current = current.getNext();
         }
-        current.next = new Node(value);
+        current.setNext(new Node(value));
         size++;
     }
 
@@ -95,20 +95,20 @@ public class ListaEnlazada {
         if (head == null)
             return;
 
-        if (head.value == value) {
-            head = head.next;
+        if (head.getValue() == value) {
+            head = head.getNext();
             size--;
             return;
         }
 
         Node current = head;
-        while (current.next != null) {
-            if (current.next.value == value) {
-                current.next = current.next.next;
+        while (current.getNext() != null) {
+            if (current.getNext().getValue() == value) {
+                current.setNext(current.getNext().getNext());
                 size--;
                 return;
             }
-            current = current.next;
+            current = current.getNext();
         }
     }
 
@@ -132,11 +132,11 @@ public class ListaEnlazada {
             return;
         }
         Node current = head;
-        while (current.next != null) {
-            System.out.print(current.value + " -> ");
-            current = current.next;
+        while (current.getNext() != null) {
+            System.out.print(current.getValue() + " -> ");
+            current = current.getNext();
         }
-        System.out.println(current.value + " -> END");
+        System.out.println(current.getValue() + " -> END");
     }
 
     /**
