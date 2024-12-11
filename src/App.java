@@ -1,10 +1,10 @@
 
 import java.util.Stack;
 
-import Ejercicio_01_sign.SignValidator;
-import Ejercicio_02_sorting.StackSorter;
-import Ejercicio_03_linkedLists.LinkedListEjr;
-import Materia.ListasEnlazadas.ListaEnlazadaGenerica;
+// import Ejercicio_01_sign.SignValidator;
+// import Ejercicio_02_sorting.StackSorter;
+// import Ejercicio_03_linkedLists.LinkedListEjr;
+// import Materia.ListasEnlazadas.ListaEnlazadaGenerica;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
 import Materia.Stacks.StackGeneric;
@@ -138,47 +138,15 @@ public class App {
         }
 
         private static void runEjercicio1() {
-                SignValidator validParenthesis = new SignValidator();
-
-                System.out.println(validParenthesis.isValid("([]){}") ? "Valido" : "Invalido");
-                System.out.println(validParenthesis.isValid("({)}") ? "Valido" : "Invalido");
 
         }
 
         private static void runEjercicio2() {
-                // Crear una instancia de StackSorter para ordenar la pila
-                StackSorter stackSorter = new StackSorter();
 
-                // Crear una instancia de StackGeneric para almacenar los enteros
-                StackGeneric<Integer> stack = new StackGeneric<>();
-                StackGeneric<Integer> stackSorted;
-
-                // Añadir elementos a la pila
-                stack.push(4);
-                stack.push(2);
-                stack.push(5);
-                stack.push(1);
-
-                // Imprimir la pila antes de ordenar
-                System.out.println("Stack antes de ordenar:");
-                stack.printAllNodes();
-
-                // Ordenar la pila y almacenar el resultado en stackSorted
-                stackSorted = stackSorter.sortStack(stack);
-
-                // Imprimir la pila después de ordenar
-                System.out.println("Stack después de ordenar:");
-                stackSorted.printAllNodes();
         }
 
         private static void runEjercicio3() {
-                LinkedListEjr example = new LinkedListEjr();
-                System.out.println("Nodo en la posición 1 desde el final: " + example.getByPos(1)); // Debería imprimir
-                                                                                                    // 7
-                System.out.println("Nodo en la posición 2 desde el final: " + example.getByPos(2)); // Debería imprimir
-                                                                                                    // 6
-                System.out.println("Nodo en la posición 4 desde el final: " + example.getByPos(5)); // Debería imprimir
-                                                                                                    // 1
+
         }
 
 }
