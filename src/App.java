@@ -1,12 +1,13 @@
 
+import java.util.Stack;
+
 import Ejercicio_01_sign.SignValidator;
 import Ejercicio_02_sorting.StackSorter;
 import Ejercicio_03_linkedLists.LinkedListEjr;
 import Materia.ListasEnlazadas.ListaEnlazadaGenerica;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
-import Materia.Staks.Stack;
-import Materia.Staks.StackGeneric;
+import Materia.Stacks.StackGeneric;
 import Models.Pantalla;
 
 public class App {
